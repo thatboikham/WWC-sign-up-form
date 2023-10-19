@@ -13,12 +13,73 @@ body{
 .sign-up-form{
     display: flex;
     background-color: #ffffff;
-    height: 80%;
-    position: absolute;
+    height: 33em;
+    align-items: center;
+    gap: 2em;
 }
-.details,
+.details{
+    margin-left: 20px;
+}
+form{
+    width: 18em;
+}
+form button{
+    width: 260.57px;
+    height: 35px;
+    margin-top: 8px;
+    color: #ffffff;
+    background-color: #000000;
+}
+input{
+    height: 30px;
+}
+.alternative{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.social a{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(225, 225, 225, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #000000;
+    transition: all 0.5s ease;
+}
+.social a:hover{
+    background-color: black;
+    color: #ffffff;
+}
+p a{
+    color: #5959ff;
+    text-decoration: none;
+}
 .content{
-    width: 80vh;
+    background-color:  #000000;
+    color: #ffffff;
+    height: 100%;
+    width: 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.welcome{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.welcome p:last-of-type {
+    font-size: 12px;
+}
+.welcome button{
+    border-radius: 25px;
+    padding: 3px;
+    width: 12em;
+    margin-top: 1.2em;
 }
 .logo{
     width: 100px;

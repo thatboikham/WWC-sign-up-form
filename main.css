@@ -33,6 +33,11 @@ form button{
 input{
     height: 30px;
 }
+input:focus {
+    outline: none;
+    border: 2px solid #1670BE;
+    box-shadow: 0 0 3px #1670BE;
+}
 .alternative{
     display: flex;
     flex-direction: column;

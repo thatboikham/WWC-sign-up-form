@@ -1,18 +1,25 @@
-const divpassword = document.getElementById("matchpass")
-const signUP_button = document.querySelector('[type = "submit"]')
-console.log(signUP_button)
-const password_input = document.getElementById("passwordDls")
-const confirmPassword_input = document.getElementById("cfrmpassord")
-const danger_P = document.createElement("p")
+const divpassword = document.getElementById("matchpass");
+const password_input = document.getElementById("passwordDls");
+const confirmPassword_input = document.getElementById("cfrmpassord");
+const error_P = document.createElement("p");
 
-danger_P.classList.add("error")
-danger_P.innerHTML = "* passwords do not match"
+error_P.classList.add("error");
+error_P.innerHTML = "* Passwords do not match";
 
-function checkMatchPass(){
+function checkMatchPass() {
     const firstpass = password_input.value;
     const secondPass = confirmPassword_input.value;
-    if(firstpass !== secondPass){
-        divpassword.appendChild(danger_P)
+
+    if (firstpass !== secondPass) {
+        if (!divpassword.contains(error_P)) {
+            divpassword.appendChild(error_P);
+        }
+    } else {
+        if (divpassword.contains(error_P)) {
+            divpassword.removeChild(error_P);
+        }
     }
 }
-signUP_button.addEventListener("click", checkMatchPass)
+
+password_input.addEventListener("input", checkMatchPass);
+confirmPassword_input.addEventListener("input", checkMatchPass);

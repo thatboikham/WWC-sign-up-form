@@ -1,3 +1,6 @@
+:root{
+    --lightBlack : #202020;
+}
 *{
     padding: 0;
     margin: 0;
@@ -28,7 +31,7 @@ form button{
     height: 35px;
     margin-top: 8px;
     color: #ffffff;
-    background-color: #000000;
+    background-color: var(--lightBlack, #000000);
 }
 form div{
     margin-top: 0.3em;
@@ -59,7 +62,7 @@ input:focus {
     transition: all 0.5s ease;
 }
 .social a:hover{
-    background-color: black;
+    background-color: var(--lightBlack, #000000);
     color: #ffffff;
 }
 p a{
@@ -67,7 +70,7 @@ p a{
     text-decoration: none;
 }
 .content{
-    background-color:  #000000;
+    background-color:  var(--lightBlack, #000000);
     color: #ffffff;
     height: 100%;
     width: 20rem;
@@ -86,6 +89,7 @@ p a{
 .welcome button{
     border-radius: 25px;
     padding: 3px;
+    border: none;
     width: 12em;
     margin-top: 1.2em;
 }

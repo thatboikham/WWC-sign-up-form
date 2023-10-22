@@ -3,6 +3,7 @@ const password_input = document.getElementById("passwordDls");
 const confirmPassword_input = document.getElementById("cfrmpassord");
 const error_P = document.createElement("p");
 const borderred = document.querySelectorAll(".validate input")
+const signUp_btn = document.querySelector('[type = "submit"]')
 
 error_P.classList.add("error");
 error_P.innerHTML = "* Passwords do not match";
@@ -36,5 +37,9 @@ function checkMatchPass() {
     }
 }
 
-password_input.addEventListener("input", checkMatchPass);
-confirmPassword_input.addEventListener("input", checkMatchPass);
+signUp_btn.addEventListener("click", function (event) {
+    checkMatchPass();
+    if (password_input.value !== confirmPassword_input.value) {
+        event.preventDefault();
+    }
+});

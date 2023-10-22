@@ -3,7 +3,6 @@ const password_input = document.getElementById("passwordDls");
 const confirmPassword_input = document.getElementById("cfrmpassord");
 const error_P = document.createElement("p");
 const borderred = document.querySelectorAll(".validate input")
-console.log(borderred)
 
 error_P.classList.add("error");
 error_P.innerHTML = "* Passwords do not match";

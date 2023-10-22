@@ -2,9 +2,17 @@ const divpassword = document.getElementById("matchpass");
 const password_input = document.getElementById("passwordDls");
 const confirmPassword_input = document.getElementById("cfrmpassord");
 const error_P = document.createElement("p");
+const borderred = document.querySelectorAll(".validate input")
+console.log(borderred)
 
 error_P.classList.add("error");
 error_P.innerHTML = "* Passwords do not match";
+
+function addborderRed(){
+    borderred.forEach(input => {
+        input.classList.add("inputerror")
+    })
+}
 
 function checkMatchPass() {
     const firstpass = password_input.value;
@@ -13,6 +21,7 @@ function checkMatchPass() {
     if (firstpass !== secondPass) {
         if (!divpassword.contains(error_P)) {
             divpassword.appendChild(error_P);
+            addborderRed();
         }
     } else {
         if (divpassword.contains(error_P)) {

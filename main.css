@@ -102,6 +102,7 @@ p a{
 }
 .error{
     color: red;
+    font-size: 0.758em;
 }
 .inputerror{
     outline: none;

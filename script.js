@@ -13,6 +13,11 @@ function addborderRed(){
         input.classList.add("inputerror")
     })
 }
+function removeborderRed(){
+    borderred.forEach(input => {
+        input.classList.remove("inputerror")
+    })
+}
 
 function checkMatchPass() {
     const firstpass = password_input.value;
@@ -26,6 +31,8 @@ function checkMatchPass() {
     } else {
         if (divpassword.contains(error_P)) {
             divpassword.removeChild(error_P);
+            removeborderRed()
+
         }
     }
 }

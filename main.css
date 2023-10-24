@@ -113,3 +113,8 @@ p a{
     border: 2px solid #ff0000;
     box-shadow: 0 0 3px #ff0000;
 }
+.passswordvalid{
+    outline: none;
+    border: 2px solid #00cc00;
+    box-shadow: 0 0 3px #00cc00;
+}

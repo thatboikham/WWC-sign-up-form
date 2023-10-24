@@ -18,6 +18,16 @@ function removeborderRed(){
         input.classList.remove("inputerror")
     })
 }
+function addGreenBoder(){
+    borderred.forEach(input => {
+        input.classList.add("passswordvalid")
+    }) 
+}
+function removeGreenBorder(){
+    borderred.forEach(input => {
+        input.classList.remove("passswordvalid")
+    }) 
+}
 
 function checkMatchPass() {
     const firstpass = password_input.value;
@@ -31,8 +41,7 @@ function checkMatchPass() {
     } else {
         if (divpassword.contains(error_P)) {
             divpassword.removeChild(error_P);
-            removeborderRed()
-
+            removeborderRed();
         }
     }
 }
@@ -41,5 +50,37 @@ signUp_btn.addEventListener("click", function (event) {
     checkMatchPass();
     if (password_input.value !== confirmPassword_input.value) {
         event.preventDefault();
+        removeGreenBorder();
     }
 });
+
+confirmPassword_input.addEventListener("input", (event) => {
+    if (password_input.value == confirmPassword_input.value) {
+        addGreenBoder();
+        error_P.remove();
+    }
+})
+
+password_input.addEventListener("input", (event) => {
+    if (password_input.value == confirmPassword_input.value) {
+        addGreenBoder();
+        error_P.remove();
+    }
+})
+
+confirmPassword_input.addEventListener("input", (event) => {
+    if (password_input.value !== confirmPassword_input.value) {
+        removeGreenBorder()
+    }else if(password_input.value == null && confirmPassword_input.value == null){
+        removeGreenBorder();
+    }
+})
+
+password_input.addEventListener("input", (event) => {
+    if (password_input.value !== confirmPassword_input.value) {
+        removeGreenBorder()
+    }else if(password_input.value == "" && confirmPassword_input.value == ""){
+        removeGreenBorder();
+        removeborderRed();
+    }
+})
